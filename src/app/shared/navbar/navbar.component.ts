@@ -8,13 +8,13 @@ import { User } from 'src/app/shared/navbar/models/user.interface';
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  
+  providers: [AuthService]
 })
 export class NavbarComponent {
-
-  constructor(private authSvc: AuthService, private router: Router) { }
-
   public user$: Observable<User> = this.authSvc.afAuth.user;
+  constructor(public authSvc: AuthService, private router: Router) { }
+
+  
 
   async onLogout() {
     try {
@@ -22,7 +22,7 @@ export class NavbarComponent {
       this.router.navigate(['/login']);
     } catch (error) {
       console.log(error);
-    } 
+    }
   }
 
 }

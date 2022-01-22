@@ -52,10 +52,9 @@ export class AuthService extends RoleValidator {
     }
   }
 
-  async logout(user: User) {
+  async logout(): Promise<void> {
     try {
       await this.afAuth.signOut();
-      this.updateUserData(user);
     } catch (error) {
       console.log(error);
     }
