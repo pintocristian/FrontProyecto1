@@ -7,7 +7,7 @@ import { AuthService } from '../services/auth.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  providers: [AuthService]
+ 
 })
 export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
@@ -19,14 +19,15 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async onGoogleLogin(){
-    try {
-      const user = await this.authSvc.loginGoogle();
+ async onGoogleLogin(){
+    try { 
+      const user = await this.authSvc.loginGoogle(); 
       if(user){
+        //Redirect to Home page 
         this.router.navigate(['/inicio']);
       }
-      
     } catch (error) {console.log(error)}
+   
   }
 
   async onLogin(){

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth/services/auth.service';
+import { User } from 'src/app/shared/navbar/models/user.interface';
 
 @Component({
   selector: 'app-navbar',
@@ -10,10 +11,10 @@ import { AuthService } from 'src/app/auth/services/auth.service';
   providers: [AuthService]
 })
 export class NavbarComponent {
+  public user$: Observable<User> = this.authSvc.afAuth.user;
+  constructor(public authSvc: AuthService, private router: Router) { }
 
-  constructor(private authSvc: AuthService, private router: Router) { }
-
-  public user$: Observable<any> = this.authSvc.afAuth.user;
+  
 
   async onLogout() {
     try {
@@ -21,7 +22,7 @@ export class NavbarComponent {
       this.router.navigate(['/login']);
     } catch (error) {
       console.log(error);
-    } this.authSvc.logout();
+    }
   }
 
 }

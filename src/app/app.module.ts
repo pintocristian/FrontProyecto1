@@ -9,6 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import { AuthService } from './auth/services/auth.service';
+import { CanEditGuard } from './auth/guards/can-edit.guard';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyA2UOlTpZz8wN-4m-bAlFQAibGlcwA4rwQ",
@@ -32,7 +34,7 @@ export const firebaseConfig = {
     AngularFireAuthModule
     
   ],
-  providers: [],
+  providers: [AuthService, CanEditGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

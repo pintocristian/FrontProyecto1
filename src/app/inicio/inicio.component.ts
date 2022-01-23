@@ -1,18 +1,14 @@
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { AuthService } from 'src/app/auth/services/auth.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.scss'],
-  providers: [AuthService]
+  styleUrls: ['./inicio.component.scss']
 })
-export class InicioComponent {
+export class InicioComponent implements OnInit {
 
-  constructor(private authSvc:AuthService) { }
-  
-  public user$: Observable<any> = this.authSvc.afAuth.user;
+  constructor() { }
+
   ngOnInit(): void {
   }
 
