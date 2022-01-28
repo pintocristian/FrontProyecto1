@@ -21,10 +21,14 @@ export class LoginComponent implements OnInit {
 
  async onGoogleLogin(){
     try { 
-      const user = await this.authSvc.loginGoogle(); 
-      if(user){
-        //Redirect to Home page 
+      const user = await this.authSvc.loginGoogle();
+      console.log(user); 
+      if(user != null){
+
         this.router.navigate(['/inicio']);
+      }else{
+        this.authSvc.logout();
+        alert('No pertenece a la poderosisima universidad del Cauca');
       }
     } catch (error) {console.log(error)}
    
@@ -36,7 +40,6 @@ export class LoginComponent implements OnInit {
     try{
       const user = await this.authSvc.login(email,password);
       if(user){
-        //Redirect to Home page 
         this.router.navigate(['/inicio']);
       }
     }catch(error){console.log(error)}

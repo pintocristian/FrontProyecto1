@@ -28,16 +28,25 @@ export class AuthService extends RoleValidator {
 
   async loginGoogle(): Promise<User> {
     try {
-      const {user} = await this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
-      this.updateUserData(user);
-      return user;
+
+      const { user } = await this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
+      if (user.email.indexOf('@unicauca.edu.co') > -1) {
+        this.updateUserData(user);
+        console.log(user);
+        return user;
+      }
+
+      return null;
+      
     } catch (error) { console.log(error) }
   }
+
+
   async login(email: string, password: string) {
     try {
       const result = await this.afAuth.signInWithEmailAndPassword(email, password);
       return result;
-
+     
     } catch (error) {
       console.log(error);
     }
