@@ -2,7 +2,7 @@
   "targets": {
     "proyecto1-ng-e93af": {
       "hosting": {
-        "Proyecto1": [
+        "proyecto1": [
           "proyecto1-ng-e93af"
         ]
       }
