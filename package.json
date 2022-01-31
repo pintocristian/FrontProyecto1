@@ -20,6 +20,8 @@
     "@angular/platform-browser": "~9.1.13",
     "@angular/platform-browser-dynamic": "~9.1.13",
     "@angular/router": "~9.1.13",
+    "@fullcalendar/angular": "^5.10.1",
+    "@fullcalendar/daygrid": "^5.10.1",
     "@popperjs/core": "^2.11.2",
     "angularfire2": "^5.4.2",
     "bootstrap": "^5.1.3",
