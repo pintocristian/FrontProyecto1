@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { PracticacaidalibreService } from './practicacaidalibre.service';
 
-const API_BASE = 'http://localhost:8080/post';
+
+
 
 @Component({
   selector: 'app-practicacaidalibre',
@@ -13,14 +14,15 @@ const API_BASE = 'http://localhost:8080/post';
 })
 export class PracticacaidalibreComponent implements OnInit {
 
-  constructor(private authSvc:AuthService, private router:Router, private http: HttpClient) { }
+  constructor(private authSvc:AuthService, private router:Router, private PracticacaidalibreService: PracticacaidalibreService) { }
   public user$: Observable<any> = this.authSvc.afAuth.user;
   ngOnInit(): void {
+    this.descargar();
   }
 
-  descargar(){
-    console.log('Descargó')
-    return this.http.get('$(API_BASE)/pdf');
-    
-}
+  descargar() {
+    this.PracticacaidalibreService.descargar();
+  }
+
+
 }
