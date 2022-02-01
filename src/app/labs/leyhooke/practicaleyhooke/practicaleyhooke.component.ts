@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import dayGridPlugin from '@fullcalendar/daygrid';
 
 @Component({
   selector: 'app-practicaleyhooke',
@@ -13,6 +12,5 @@ export class PracticaleyhookeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  calendarPlugins = [dayGridPlugin];
 
 }
