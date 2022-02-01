@@ -19,7 +19,8 @@ export class PracticacaidalibreComponent implements OnInit {
   }
 
   descargar(){
-    return this.http.get('/pdf');
-
+    console.log('Descargó')
+    return this.http.get('$(API_BASE)/pdf');
+    
 }
 }
