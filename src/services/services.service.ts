@@ -7,14 +7,16 @@ import { Observable, of } from 'rxjs';
 import { User } from 'src/app/shared/navbar/models/user.interface';
 import { switchMap } from 'rxjs/operators';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { RoleValidator } from '../helpers/roleValidator';
+import { RoleValidator } from '../app/auth/helpers/roleValidator';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService extends RoleValidator {
+  private API_BASE = 'http://localhost:8080/post';
   public user$: Observable<User>;
-  constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore) {
+  constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore, private httpClient: HttpClient) {
     super();
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
@@ -81,5 +83,11 @@ export class AuthService extends RoleValidator {
     };
 
     return userRef.set(data, { merge: true });
+  }
+
+  descargar():Observable<any> {
+    console.log('Descargó')
+    return this.httpClient.get(`${this.API_BASE}/pdf`);
+
   }
 }
