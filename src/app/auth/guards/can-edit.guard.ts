@@ -18,7 +18,7 @@ export class CanEditGuard implements CanActivate {
       map((user)=> user && this.authSvc.isEstudiante(user)),
       tap(canEdit =>{
         if (!canEdit){
-          window.alert('Access denied. Must have permission to edit.')
+          window.alert('No puedes acceder a esta pestaña porque no haz iniciado sesión.')
         }
       })
     );
