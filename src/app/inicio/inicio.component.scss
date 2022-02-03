@@ -21,10 +21,17 @@ body {
 
 .laboratorios{
     display: flex;
+    margin-bottom: 10px;
 }
 
-.irPractica{
-    margin-left:50px;
+
+
+.titulo-practica {
+    font-size: 20px;
+}
+.primera-card{
+    margin-right: 10px;
+    width: auto;
 }
 
 .emp-profile {

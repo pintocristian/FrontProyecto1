@@ -47,6 +47,7 @@ export const firebaseConfig = {
     MatDialogModule,
     MatButtonModule,
     FormsModule,
+    HttpClientModule
     
   ],
   schemas: [
