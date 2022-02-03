@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 import { AuthService } from './auth/services/auth.service';
 import { CanEditGuard } from './auth/guards/can-edit.guard';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyA2UOlTpZz8wN-4m-bAlFQAibGlcwA4rwQ",
@@ -33,7 +34,8 @@ export const firebaseConfig = {
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
     
   ],
   providers: [AuthService, CanEditGuard],
