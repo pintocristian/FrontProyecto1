@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
@@ -13,6 +13,12 @@ import { AuthService } from './auth/services/auth.service';
 import { CanEditGuard } from './auth/guards/can-edit.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
+import { VincularMateriaComponent } from './vincular-materia/vincular-materia.component';
+import { CalendarComponent } from './calendar/calendar.component';
+
 
 export const firebaseConfig = {
   apiKey: "AIzaSyA2UOlTpZz8wN-4m-bAlFQAibGlcwA4rwQ",
@@ -24,19 +30,27 @@ export const firebaseConfig = {
 }
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
-    NavbarComponent
-  ],
+    NavbarComponent,
+    VincularMateriaComponent,
+      CalendarComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatDialogModule,
+    MatButtonModule,
+    FormsModule,
     
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ],
   providers: [AuthService, CanEditGuard],
   bootstrap: [AppComponent]

@@ -1,8 +1,8 @@
 {
   "hosting": [
     {
-      "target": "Proyecto1",
-      "public": "dist/Proyecto1",
+      "target": "proyecto1",
+      "public": "dist/proyecto1",
       "ignore": [
         "**/.*"
       ],

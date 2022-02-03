@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth/services/auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { VincularMateriaComponent } from '../vincular-materia/vincular-materia.component';
 
 @Component({
   selector: 'app-inicio',
@@ -10,10 +13,31 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 })
 export class InicioComponent {
 
-  constructor(private authSvc:AuthService) { }
-  
-  public user$: Observable<any> = this.authSvc.afAuth.user;
-  ngOnInit(): void {
+  constructor(private authSvc: AuthService, private router: Router, public dialog: MatDialog) {
+    this.materias = "Mecanica";
   }
 
-}
+  openDialog(): void {
+    const dialogRef = this.dialog.open(VincularMateriaComponent, {
+      data: { name: this.codigo }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+      this.codigo = result;
+    });
+  }
+
+  public user$: Observable<any> = this.authSvc.afAuth.user;
+  materias: string;
+  codigo: number;
+  ngOnInit(): void {
+  }
+  async verCalendario() {
+    try {
+      await this.router.navigate(['/labCaidaLibre']);
+    } catch (error) { console.log(error) }
+
+  }
+} 
