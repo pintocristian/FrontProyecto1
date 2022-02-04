@@ -14,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService extends RoleValidator {
-  private API_BASE = 'http://localhost:8080/post';
+  private API_BASE = 'http://localhost:8080/laboratorio';
   data = {};
   public user$: Observable<User>;
   constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore, private httpClient: HttpClient) {
