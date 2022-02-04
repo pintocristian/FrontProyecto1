@@ -14,7 +14,10 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService extends RoleValidator {
-  private API_BASE = 'http://localhost:8080/post';
+  
+  private API_BASE = 'http://localhost:8080/laboratorio';
+  data = {};
+  
   public user$: Observable<User>;
   constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore, private httpClient: HttpClient) {
     super();
@@ -85,9 +88,7 @@ export class AuthService extends RoleValidator {
     return userRef.set(data, { merge: true });
   }
 
-  descargar():Observable<any> {
-    console.log('Descargó')
-    return this.httpClient.get(`${this.API_BASE}/pdf`);
-
+  descargar() {
+    return this.httpClient.get(`${this.API_BASE}/pdf`).subscribe(result => this.data = result);
   }
 }
