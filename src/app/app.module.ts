@@ -18,6 +18,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 import { VincularMateriaComponent } from './vincular-materia/vincular-materia.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { StreamingComponent } from './streaming/streaming.component';
 
 
 export const firebaseConfig = {
@@ -30,11 +31,12 @@ export const firebaseConfig = {
 }
 
 @NgModule({
-  declarations: [	
+  declarations: [		
     AppComponent,
     NavbarComponent,
     VincularMateriaComponent,
-      CalendarComponent
+      CalendarComponent,
+      StreamingComponent
    ],
   imports: [
     BrowserModule,
