@@ -17,7 +17,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 import { VincularMateriaComponent } from './vincular-materia/vincular-materia.component';
-import { CalendarComponent } from './calendar/calendar.component';
+
 
 
 export const firebaseConfig = {
@@ -34,7 +34,6 @@ export const firebaseConfig = {
     AppComponent,
     NavbarComponent,
     VincularMateriaComponent,
-      CalendarComponent
    ],
   imports: [
     BrowserModule,
@@ -47,7 +46,11 @@ export const firebaseConfig = {
     MatDialogModule,
     MatButtonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    
+    
     
   ],
   schemas: [

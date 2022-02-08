@@ -36,7 +36,7 @@ export class InicioComponent {
   }
   async verCalendario() {
     try {
-      await this.router.navigate(['/labCaidaLibre']);
+      await this.router.navigate(['/calendario']);
     } catch (error) { console.log(error) }
 
   }

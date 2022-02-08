@@ -15,7 +15,9 @@ const routes: Routes = [{
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   { path: 'practicacaidalibre', loadChildren: () => import('./labs/caidalibre/practicacaidalibre/practicacaidalibre.module').then(m => m.PracticacaidalibreModule) },
   { path: 'practicamovparabolico', loadChildren: () => import('./labs/movparabolico/practicamovparabolico/practicamovparabolico.module').then(m => m.PracticamovparabolicoModule) },
-  { path: 'practicaleyhooke', loadChildren: () => import('./labs/leyhooke/practicaleyhooke/practicaleyhooke.module').then(m => m.PracticaleyhookeModule) }];
+  { path: 'practicaleyhooke', loadChildren: () => import('./labs/leyhooke/practicaleyhooke/practicaleyhooke.module').then(m => m.PracticaleyhookeModule) },
+  { path: 'calendario', loadChildren: () => import('./calendario/calendario.module').then(m => m.CalendarioModule) },
+  { path: 'pruebaCal', loadChildren: () => import('./prueba-cal/prueba-cal.module').then(m => m.PruebaCalModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

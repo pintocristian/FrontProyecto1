@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LabCaidaLibreComponent } from './lab-caida-libre.component';
+import { CalendarioComponent } from './calendario.component';
 
-describe('LabCaidaLibreComponent', () => {
-  let component: LabCaidaLibreComponent;
-  let fixture: ComponentFixture<LabCaidaLibreComponent>;
+describe('CalendarioComponent', () => {
+  let component: CalendarioComponent;
+  let fixture: ComponentFixture<CalendarioComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LabCaidaLibreComponent ]
+      declarations: [ CalendarioComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LabCaidaLibreComponent);
+    fixture = TestBed.createComponent(CalendarioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
