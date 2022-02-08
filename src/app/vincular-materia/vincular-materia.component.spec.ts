@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { VincularMateriaComponent } from './vincular-materia.component';
 
@@ -7,7 +7,7 @@ describe('VincularMateriaComponent', () => {
   let component: VincularMateriaComponent;
   let fixture: ComponentFixture<VincularMateriaComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ VincularMateriaComponent ],
       schemas: [

@@ -18,7 +18,7 @@ const routes: Routes = [{
   { path: 'practicaleyhooke', loadChildren: () => import('./labs/leyhooke/practicaleyhooke/practicaleyhooke.module').then(m => m.PracticaleyhookeModule) }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
